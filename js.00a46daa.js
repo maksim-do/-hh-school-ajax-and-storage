@@ -13089,7 +13089,10 @@ var _default = function _default() {
       searchInput.value = value;
       var input = new Event('input');
       searchInput.dispatchEvent(input);
-      var submit = new Event('submit');
+      var submit = new Event('submit', {
+        bubbles: true,
+        cancelable: true
+      });
       searchForm.dispatchEvent(submit);
     }; //  отрисовка контейнера с подсказками
 
@@ -13352,7 +13355,7 @@ var _default = function _default() {
   searchInput.addEventListener('focusout', function () {
     // небольшой костыль позволяет прокликать подсказку
     setTimeout(function () {
-      return watchedState.visibleListSearch = false;
+      watchedState.visibleListSearch = false;
     }, 200);
   });
   window.addEventListener('storage', function () {
@@ -13402,7 +13405,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37603" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46241" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
