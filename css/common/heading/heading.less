@@ -1,0 +1,35 @@
+.heading {
+    font-size: 26px;
+    font-family: @font-family-heading;
+    font-weight: normal;
+    margin: 0 @column-padding-s;
+
+    @media @screen-gt-s {
+        margin: 0 @column-padding-m;
+    }
+
+    &_level-1 {
+        font-size: 26px;
+        margin-left: 0;
+        margin-bottom: 10px;
+
+        @media @screen-gt-s {
+            font-size: 36px;
+        }
+
+    }
+
+    &_level-2 {
+        font-size: 20px;
+        display:block;
+        width: 100%;
+        margin-bottom: 5px;
+        white-space: nowrap; /* Запрещаем перенос строк */
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media @screen-gt-s {
+            font-size: 30px;
+        }
+    }
+}
