@@ -42,7 +42,7 @@ export default () => {
       searchInput.value = value;
       const input = new Event('input');
       searchInput.dispatchEvent(input);
-      const submit = new Event('submit');
+      const submit = new Event('submit', { bubbles:true, cancelable:true });
       searchForm.dispatchEvent(submit);
     };
 
@@ -172,7 +172,7 @@ export default () => {
 
   searchInput.addEventListener('focusout', () => {
     // небольшой костыль позволяет прокликать подсказку
-    setTimeout(() => watchedState.visibleListSearch = false, 200);
+    setTimeout(() => { watchedState.visibleListSearch = false }, 200);
   });
 
   window.addEventListener('storage', () => {
