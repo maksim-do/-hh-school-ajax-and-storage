@@ -1,0 +1,28 @@
+.movie-card {
+  display: flex;
+  box-sizing: border-box;
+
+  &__image-container {
+    margin-right: 10px;
+    
+  }
+
+  &__image {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__title {
+    flex-shrink: 1;
+    align-self: center;
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 5px;
+  }
+
+  &__year {
+    align-self: center;
+    text-align: center;
+  }
+}
